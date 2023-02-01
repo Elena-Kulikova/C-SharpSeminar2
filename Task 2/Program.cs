@@ -3,20 +3,23 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-Console.Write("Введите любое число:");
+
+Console.Write("Введите любое число:" );
 int numberA = Convert.ToInt32(Console.ReadLine());
 
-
-if (numberA > 1000)
-{
-    System.Console.WriteLine($"Третья цифра числа равна {numberA % 1000/100}");
-}
 
 if (numberA < 100)
 {
     System.Console.WriteLine("Третьей цифры нет");
 }
-else if (numberA >= 100 && numberA < 1000)
+
+else
 {
+    while (numberA > 999)
+    {
+        numberA = numberA / 10;
+    }
+
     System.Console.WriteLine($"Третья цифра числа равна {numberA % 10}");
 }
+
